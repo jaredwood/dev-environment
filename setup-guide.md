@@ -24,7 +24,26 @@ After installing run `CTRL + r` in the terminal to explore.
 Brief, concise descriptions of command-line interface commands.
 
 ```
-$ npm install tldr
+$ npm install -g tldr
+```
+
+If the install fails because of access permissions then you need to [configure a user-global package folder](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md). On the command line interface run (make sure `${HOME}` has a value or replace with appropriate)
+
+```
+$ mkdir "${HOME}/.npm-packages"
+$ npm config set prefix "${HOME}/.npm-packages"
+```
+
+Then add the following to `.zshrc/.bashrc`
+
+```
+# User-global npm package location.
+NPM_PACKAGES="${HOME}/.npm-packages"
+# Update path.
+export PATH="$PATH:$NPM_PACKAGES/bin"
+# Preserve MANPATH if you already defined it somewhere in your config.
+# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 ```
 
 ## Fast `grep -r` (RipGrep)
