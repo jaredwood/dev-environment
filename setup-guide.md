@@ -59,7 +59,82 @@ $ sudo dpkg -i ripgrep_11.0.2_amd64.deb
 To run `rg <query>` instead of `grep -r <query> .`.
 
 ## `tmux` (especially for remote dev)
-TODO
+See [this link](https://www.hamvocke.com/blog/a-guide-to-customizing-your-tmux-conf/) for details on setting up tmux.
+
+Create/overwrite `~/.tmux.conf` with
+```
+# Remap prefix from 'C-b' to 'C-a'
+
+unbind C-b
+
+set-option -g prefix C-a
+
+bind-key C-a send-prefix
+
+
+# Split panes using | and -
+
+bind | split-window -h
+
+bind - split-window -v
+
+unbind '"'
+
+unbind %
+
+
+# Reload config file (change file location to your the tmux.conf you want to use)
+
+bind r source-file ~/.tmux.conf
+
+
+# Switch panes using Alt-arrow without prefix
+
+bind -n M-Left select-pane -L
+
+bind -n M-Right select-pane -R
+
+bind -n M-Up select-pane -U
+
+bind -n M-Down select-pane -D
+
+
+# Enable mouse mode (tmux 2.1 and above)
+
+set -g mouse on
+
+
+set-option -g mouse on
+
+
+# make scrolling with wheels work
+
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+
+
+# Set TERM
+
+# set -g default-terminal "xterm-256color"
+
+set -g default-terminal "screen-256color"
+
+
+# Make Ctrl+left/right work
+
+set-window-option -g xterm-keys on
+```
+
+Start tmux by typing tmux in terminal. Exit (and leave running) by running `CTRL+a d`. This will leave it running so the same session can be re-attached.
+
+Important commands:
+* "CTRL+a |" to split vertically.
+* "CTRL+a -" to split horizontally.
+* "CTRL+{up/down/left/right}" to move between window panes.
+* "CTRL+d" to close current pane.
+* "CTRL+a d" to exit tmux (but still leave session running).
+* When ssh into machine (with tmux session running) "tmux a" will attach to the running session.
 
 # Vscode
 TODO
