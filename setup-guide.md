@@ -133,6 +133,9 @@ Some git commands are long. Create aliases for them. Run `git config --global --
   le = log --oneline --decorate
 ```
 
+### References
+* https://haacked.com/archive/2014/07/28/github-flow-aliases/
+
 # Vscode
 TODO
 
