@@ -104,6 +104,35 @@ Important commands:
 * "CTRL+a d" to exit tmux (but still leave session running).
 * When ssh into machine (with tmux session running) "tmux a" will attach to the running session.
 
+## Git
+First things first.
+```
+git config --global user.name "your-name"
+git config --global user.email "your-email"
+git config --global core.editor "emacs -nw"
+```
+
+Some git commands are long. Create aliases for them. Run `git config --global --edit`. Then add your aliases. Here are some ideas.
+```
+[alias]
+  # Standard stuff
+  a = add --all
+  b = branch
+  c = commit
+  ca = commit --amend
+  co = checkout
+  cob = checkout -b
+  d = diff
+  s = status
+  up = "!git fetch --all --prune && git rebase origin/master"
+
+  # Pretty log
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  le = log --oneline --decorate
+```
+
 # Vscode
 TODO
 
