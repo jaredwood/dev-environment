@@ -137,25 +137,24 @@ Some git commands are long. Create aliases for them. Run `git config --global --
 * https://haacked.com/archive/2014/07/28/github-flow-aliases/
 
 # Vscode
-TODO
+TODO: Plugins.
 
 ## Remote development
-TODO
-
-# Ubuntu i3 window tiling
-TODO
+TODO: Configuring chrome remote desktop.
+TODO: Terminal settings for SSH and remote desktop with tmux.
 
 # Chrome
 TODO
 
 ## Search engines
-TODO
+TODO: In settings add new search engines to sites you often search.
 
 ## SourceGraph
-TODO
-
-# Slack
-TODO
+TODO: Create search engines for file search and keyword search.
 
 # Gmail
+* TODO: Subscribe to github PR notifications.
+* TODO: Use filters to clean and organize categories of messages.
+
+# Slack
 TODO
