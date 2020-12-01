@@ -17,11 +17,20 @@ $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 $ ~/.fzf/install
 ```
 
+Or with homebrew do
+```
+$ brew update
+$ brew install fzf
+```
+and follow the prompts enabling fuzzy auto-complete and key bindings.
+
 After installing run `CTRL + r` in the terminal to explore.
 
 ## `tldr`
 
 Brief, concise descriptions of command-line interface commands.
+
+If you do not have node.js and npm install those first. (On mac `brew install node`.) Then
 
 ```
 $ npm install -g tldr
@@ -54,6 +63,11 @@ For a fast `grep -r` see [RipGrep for current installation instructions](https:/
 $ cd ~/Downloads && curl -LO \ 
 https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
 $ sudo dpkg -i ripgrep_11.0.2_amd64.deb
+```
+
+Or with homebrew
+```
+$ brew install ripgrep
 ```
 
 To run `rg <query>` instead of `grep -r <query> .`.
