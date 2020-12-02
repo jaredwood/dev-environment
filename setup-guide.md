@@ -30,6 +30,8 @@ After installing run `CTRL + r` in the terminal to explore.
 
 Brief, concise descriptions of command-line interface commands.
 
+The original version of `tldr` is built in node.js. If you want to install the original version then you will need node.js and npm.
+
 If you do not have node.js and npm install those first. (On mac `brew install node`.) Then
 
 ```
@@ -54,6 +56,12 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 # Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 ```
+
+A very fast alternative version of `tldr` is [tealdeer](https://dbrgn.github.io/tealdeer). This version is the fastest available. Compare 9ms to 17ms (for the node.js version). To install this version first install the rust command line tools because you will need `cargo` to install the rust package. After installing the rust tools then
+```
+$ cargo install tealdeer
+```
+For auto-completion in `zsh` you will need to copy the `zsh_tealdeer` file to `/usr/share/zsh/site-functions/_tldr` (as described in the [installation instructions](dgrgn.github.io/tealdeer/installing.html).
 
 ## Fast `grep -r` (RipGrep)
 
