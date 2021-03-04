@@ -8,6 +8,34 @@ This is a concise guide for improving development efficiency. Topics include
 
 # Terminal CLI
 
+## zsh
+
+Ensure that zsh is installed. On ubuntu
+
+```
+sudo apt install zsh
+sudo usermod -s /usr/bin/zsh $(whoami)
+chsh -s $(which zsh)
+```
+
+Log out and back in of the terminal. You will be prompted to generate configs. Do so.
+
+See https://gist.github.com/kevin-smets/8568070 for further customizing zsh. What I do is described below.
+
+Install oh-my-zsh.
+
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Edit ~/.zshrc theme as desired. I like agnoster or powerlevel10k. For powerlevel10k first do
+
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+Log out and back in to terminal and configuration wizard will boot. Follow it. Otherwise configure by
+
+p10k configure
+
 ## fzf
 
 fzf provides a more interactive reverse search in the terminal. See [this explanation of fzf](https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr).
@@ -27,6 +55,10 @@ and follow the prompts enabling fuzzy auto-complete and key bindings.
 After installing run `CTRL + r` in the terminal to explore.
 
 ## `tldr`
+
+The original tldr is installed via `npm`. My preferred version is `tealdeer`. Both are described below.
+
+### `tldr` via `npm`
 
 Brief, concise descriptions of command-line interface commands.
 
@@ -57,11 +89,21 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 ```
 
+### `tealdeer` via rust
+
 A very fast alternative version of `tldr` is [tealdeer](https://dbrgn.github.io/tealdeer). This version is the fastest available. Compare 9ms to 17ms (for the node.js version). To install this version first install the rust command line tools because you will need `cargo` to install the rust package. After installing the rust tools then
+
 ```
 $ cargo install tealdeer
 ```
-For auto-completion in `zsh` you will need to copy the `zsh_tealdeer` file to `/usr/share/zsh/site-functions/_tldr` (as described in the [installation instructions](dgrgn.github.io/tealdeer/installing.html).
+
+For auto-completion in `zsh` you will need to copy the `zsh_tealdeer` file to the zsh completions directory. You can get the `zsh_tealdeer` file directly from the tealdeer repo (but it might not be within the installed files) (as described in the [installation instructions](dgrgn.github.io/tealdeer/installing.html).
+
+The location of the zsh custom auto completions depends on the installation. I ended up doing
+
+```
+sudo cp tealdeer/zsh_tealdeer /usr/share/zsh/vendor-completions/_tldr
+```
 
 ## Fast `grep -r` (RipGrep)
 
