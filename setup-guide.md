@@ -13,10 +13,10 @@ This is a concise guide for improving development efficiency. Topics include
 ### Notes on zsh
 
 Shell configurations are sourced in particular orders. The order of sourcing follows
-1. `.zshenv`
-2. `.zprofile` (optional)
-3. `.zshrc` (only at start of an interactive shell)
-4. `.zlogin` (only at start of a login shell)
+1. `.zshenv` (always)
+2. `.zprofile` (at start of login shell)
+3. `.zshrc` (at start of an interactive shell)
+4. `.zlogin` (at start of a login shell)
 
 `.zshenv` is always sourced. It often contains exported variables.
 
