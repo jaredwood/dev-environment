@@ -10,6 +10,24 @@ This is a concise guide for improving development efficiency. Topics include
 
 ## zsh
 
+### Notes on zsh
+
+Shell configurations are sourced in particular orders. The order of sourcing follows
+1. `.zshenv`
+2. `.zprofile` (optional)
+3. `.zshrc` (only at start of an interactive shell)
+4. `.zlogin` (only at start of a login shell)
+
+`.zshenv` is always sourced. It often contains exported variables.
+
+`.zshrc` is sourced when an interactive shell is started (e.g., you open up the terminal). It configures the behavior of the interactive shell.
+
+`.zlogin` is sourced when a login shell is started. For example, when you log in to the desktop. So this config is used to start the graphics (X). 
+
+`.zprofile` and `.zlogin` are meant to be used one or the other (depending on preference of order). However they can be used together if desired.
+
+### Installing zsh
+
 Ensure that zsh is installed. On ubuntu
 
 ```
