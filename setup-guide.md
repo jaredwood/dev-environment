@@ -48,7 +48,15 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 Edit ~/.zshrc theme as desired. I like agnoster or powerlevel10k. For powerlevel10k first do
 
+```
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+```
+
+Then edit the them in `.zshrc` as
+
+```
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
 
 Log out and back in to terminal and configuration wizard will boot. Follow it. Otherwise configure by
 
