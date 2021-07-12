@@ -32,7 +32,11 @@ Ensure that zsh is installed. On ubuntu
 
 ```
 sudo apt install zsh
+```
+```
 sudo usermod -s /usr/bin/zsh $(whoami)
+```
+```
 chsh -s $(which zsh)
 ```
 
@@ -60,7 +64,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 Log out and back in to terminal and configuration wizard will boot. Follow it. Otherwise configure by
 
+```
 p10k configure
+```
 
 ## fzf
 
@@ -68,12 +74,16 @@ fzf provides a more interactive reverse search in the terminal. See [this explan
 
 ```
 $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+```
+```
 $ ~/.fzf/install
 ```
 
 Or with homebrew do
 ```
 $ brew update
+```
+```
 $ brew install fzf
 ```
 and follow the prompts enabling fuzzy auto-complete and key bindings.
@@ -100,6 +110,8 @@ If the install fails because of access permissions then you need to [configure a
 
 ```
 $ mkdir "${HOME}/.npm-packages"
+```
+```
 $ npm config set prefix "${HOME}/.npm-packages"
 ```
 
@@ -135,17 +147,11 @@ sudo cp tealdeer/zsh_tealdeer /usr/share/zsh/vendor-completions/_tldr
 
 For a fast `grep -r` see [RipGrep for current installation instructions](https://github.com/BurntSushi/ripgrep#installation).
 
-### Ubuntu
+For Ubuntu version >= Cosmic just use `apt-get`.
 
-For Ubuntu version $\ge$ Cosmic just use `apt-get`. Otherwise download the deb. This script [install_ripgrep_deb.sh](install_ripgrep_deb.sh) automates this.
+Otherwise download the deb file and install with `dpkg`. This script [install_ripgrep_deb.sh](install_ripgrep_deb.sh) automates installing the most recent release.
 
-```
-$ cd ~/Downloads && curl -LO \ 
-https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
-$ sudo dpkg -i ripgrep_11.0.2_amd64.deb
-```
-
-### Homebrew
+Or with homebrew
 
 ```
 $ brew install ripgrep
@@ -203,7 +209,11 @@ Important commands:
 First things first.
 ```
 git config --global user.name "your-name"
+```
+```
 git config --global user.email "your-email"
+```
+```
 git config --global core.editor "emacs -nw"
 ```
 
