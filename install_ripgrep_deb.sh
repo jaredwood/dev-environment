@@ -6,6 +6,4 @@ FILENAME="ripgrep_${VERSION}_amd64.deb"
 
 echo "Fetching ${FILENAME} from ${REPO}."
 
-wget ${REPO}${FILENAME}
-dpkg -i ${FILENAME}
-rm ${FILENAME}
+wget ${REPO}${FILENAME} && dpkg -i ${FILENAME} && rm ${FILENAME}
