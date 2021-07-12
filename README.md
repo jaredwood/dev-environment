@@ -135,13 +135,18 @@ sudo cp tealdeer/zsh_tealdeer /usr/share/zsh/vendor-completions/_tldr
 
 For a fast `grep -r` see [RipGrep for current installation instructions](https://github.com/BurntSushi/ripgrep#installation).
 
+### Ubuntu
+
+For Ubuntu version $\ge$ Cosmic just use `apt-get`. Otherwise download the deb. This script [install_ripgrep_deb.sh](install_ripgrep_deb.sh) automates this.
+
 ```
 $ cd ~/Downloads && curl -LO \ 
 https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
 $ sudo dpkg -i ripgrep_11.0.2_amd64.deb
 ```
 
-Or with homebrew
+### Homebrew
+
 ```
 $ brew install ripgrep
 ```
