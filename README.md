@@ -242,10 +242,46 @@ TODO: Terminal settings for SSH and remote desktop with tmux.
 TODO
 
 ## Search engines
-TODO: In settings add new search engines to sites you often search.
 
-## SourceGraph
-TODO: Create search engines for file search and keyword search.
+In settings add new search engines to sites you often search. The query is of the format `URL+%s`. So in the browser you type the search engine name followed by the query string.
+
+### SourceGraph code search engines
+
+Search code with SourceGraph.
+
+#### Code search
+
+Search within files for query string.
+
+Search engine: cs
+Keyword: cs
+URL query: `https://sourcegraph.lyft.net/search?q=repo:%5Egithub%5C.com/lyft/avsoftware%24%40deliver/planning+%s`
+
+#### File search
+
+Search for files matching a query string.
+
+Search engine: fs
+Keyword: fs
+URL query: `https://sourcegraph.lyft.net/search?q=repo:%5Egithub%5C.com/lyft/avsoftware%24%40deliver/planning+type:path+%s`
+
+### Github search engines
+
+#### Code list
+
+Pull up the open pull requests created by a user.
+
+Search engine: cl
+Keyword: cl
+URL query: `https://github.com/pulls?q=is%3Aopen+is%3Apr+author%3Ajaredwood+archived%3Afalse+user%3Alyft`
+
+#### Code review
+
+Pull up the open code reviews assigned to a user.
+
+Search engine: cr
+Keyword: cr
+URL query: `https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3Alyft+assignee%3Ajaredwood`
 
 # Gmail
 * TODO: Subscribe to github PR notifications.
