@@ -254,16 +254,26 @@ Search code with SourceGraph.
 Search within files for query string.
 
 Search engine: cs
+
 Keyword: cs
-URL query: `https://sourcegraph.lyft.net/search?q=repo:%5Egithub%5C.com/lyft/avsoftware%24%40deliver/planning+%s`
+
+URL query:
+```
+https://sourcegraph.lyft.net/search?q=repo:%5Egithub%5C.com/lyft/avsoftware%24%40deliver/planning+%s
+```
 
 #### File search
 
 Search for files matching a query string.
 
 Search engine: fs
+
 Keyword: fs
-URL query: `https://sourcegraph.lyft.net/search?q=repo:%5Egithub%5C.com/lyft/avsoftware%24%40deliver/planning+type:path+%s`
+
+URL query:
+```
+https://sourcegraph.lyft.net/search?q=repo:%5Egithub%5C.com/lyft/avsoftware%24%40deliver/planning+type:path+%s
+```
 
 ### Github search engines
 
@@ -272,16 +282,26 @@ URL query: `https://sourcegraph.lyft.net/search?q=repo:%5Egithub%5C.com/lyft/avs
 Pull up the open pull requests created by a user.
 
 Search engine: cl
+
 Keyword: cl
-URL query: `https://github.com/pulls?q=is%3Aopen+is%3Apr+author%3Ajaredwood+archived%3Afalse+user%3Alyft`
+
+URL query:
+```
+https://github.com/pulls?q=is%3Aopen+is%3Apr+author%3Ajaredwood+archived%3Afalse+user%3Alyft
+```
 
 #### Code review
 
 Pull up the open code reviews assigned to a user.
 
 Search engine: cr
+
 Keyword: cr
-URL query: `https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3Alyft+assignee%3Ajaredwood`
+
+URL query:
+```
+https://github.com/pulls?q=is%3Aopen+is%3Apr+archived%3Afalse+user%3Alyft+assignee%3Ajaredwood
+```
 
 # Gmail
 * TODO: Subscribe to github PR notifications.
