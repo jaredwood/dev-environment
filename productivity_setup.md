@@ -83,97 +83,97 @@ The following is an example set of filters.
 ### Review Request Filters
 
 #### design reviews
-query: `from:comments-noreply@docs.google.com`
-apply: label design-review, skip inbox
+* query: `from:comments-noreply@docs.google.com`
+* apply: label design-review, skip inbox
 
 #### code pull requests
-query: from:notifications@github.com
-apply: label pr, skip inbox
+* query: `from:notifications@github.com`
+* apply: label pr, skip inbox
 
 #### code reviews requested
-query: (from:notifications@github.com {cc:review_requested cc:assign})
-apply: label review
+* query: `(from:notifications@github.com {cc:review_requested cc:assign})`
+* apply: label review
 
 #### code reviews authored
-query: (from:notifications@github.com {cc:author})
-apply: label author
+* query: `(from:notifications@github.com {cc:author})`
+* apply: label author
 
 #### code reviews mentioned
-query: (from:notifications@github.com {cc:mention})
-apply: label mention
+* query: `(from:notifications@github.com {cc:mention})`
+* apply: label mention
 
 #### avsoftware repo
-query: to:lyft/avsoftware
-apply: label avsw
+* query: `to:lyft/avsoftware`
+* apply: label avsw
 
 #### avjadoo repo
-query: to:lyft/avjadoo
-apply: label jadoo
+* query: `to:lyft/avjadoo`
+* apply: label jadoo
 
 ### goals lib
-query: "src/planning/lib/goal_state"
-apply: label pr_goals
+* query: `"src/planning/lib/goal_state"`
+* apply: label pr_goals
 
 ### Action & Announcements Filters
 
 #### action required
-query: subject:(action required)
-apply: label action-required, skip inbox
+* query: `subject:(action required)`
+* apply: label action-required, skip inbox
 
 #### action requested
-query: subject:(action -required)
-apply: label action-requested, skip inbox
+* query: `subject:(action -required)`
+* apply: label action-requested, skip inbox
 
 #### SEV
-query: subject:sev
-apply: label sev, skip inbox
+* query: `subject:sev`
+* apply: label sev, skip inbox
 
 #### announcement
-query: {subject:({announce announcement announcing "inform"} -{newsletter 3p "release"}) (from:"James Kuffner" -to:{jwood jared.wood}) (from:"Luc Vincent" -to:{jwood jared.wood})}
-apply: label announcement, skip inbox
+* query: `{subject:({announce announcement announcing "inform"} -{newsletter 3p "release"}) (from:"James Kuffner" -to:{jwood jared.wood}) (from:"Luc Vincent" -to:{jwood jared.wood})}`
+* apply: label announcement, skip inbox
 
 #### newsletter
-query: subject:{newsletter 3p "release"}
-apply: label newsletter, skip inbox
+* query: `subject:{newsletter 3p "release"}`
+* apply: label newsletter, skip inbox
 
 ### Meetings Filters
 
 #### interviews
-query: subject:"interview"
-apply: label interview, skip inbox
+* query: `subject:"interview"`
+* apply: label interview, skip inbox
 
 #### google meetings
-query: "Invitation from Google Calendar"
-apply: label meeting, skip inbox
+* query: `"Invitation from Google Calendar"`
+* apply: label meeting, skip inbox
 
 ### Tasks
 
 #### jira
-query from:jira
-apply: label jira, skip inbox
+* query: `from:jira`
+* apply: label jira, skip inbox
 
 #### tickets
-query: (from:jira to:jwood)
-apply: label tickets
+* query: `(from:jira to:jwood)`
+* apply: label tickets
 
 ## Custom Multiple Inboxes Setup
 
 Now, to harness the filters defined above, switch the inbox layout to "Multiple Inboxes" and customize the set of inboxes as
 
 Section: actions
-query: (label:{action-required action-requested} is:unread)
+* query: `(label:{action-required action-requested} is:unread)`
 
 Section: interviews
-query: (label:interview)
+* query: `(label:interview)`
 
 Section: reviews
-query: (label:{design-review (pr {review author})} is:unread)
+* query: `(label:{design-review (pr {review author})} is:unread)`
 
 Section: announcements
-query: (label:{announcement sev} is:unread)
+* query: `(label:{announcement sev} is:unread)`
 
 Section: updates
-query: ({label:newsletter label:meeting label:(jira ticket)} is:unread)
+* query: `({label:newsletter label:meeting label:(jira ticket)} is:unread)`
 
 And set the option for the inbox to be below the sections defined above.
 
