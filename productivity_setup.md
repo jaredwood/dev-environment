@@ -83,7 +83,7 @@ The following is an example set of filters.
 ### Review Request Filters
 
 #### design reviews
-query: from:comments-noreply@docs.google.com
+query: `from:comments-noreply@docs.google.com`
 apply: label design-review, skip inbox
 
 #### code pull requests
