@@ -68,6 +68,24 @@ Log out and back in to terminal and configuration wizard will boot. Follow it. O
 p10k configure
 ```
 
+In some cases the required font may be missing or just not set in the terminal. You will notice this because during configuration the symbols will not be correct.
+
+You need Meslo Nerd Fonts. Refer to the [nerd-fonts repo](https::github.com/ryanoasis/nerd-fonts).
+
+```
+git clone https://github.com/ryanoasis/nerd-fonts
+```
+```
+cd nerd-fonts
+```
+```
+sudo ./install.sh Meslo
+```
+
+This repo is huge so you probably want to delete it after installing.
+
+You will then need to change the font in your terminal profile preferences to be `Meslo Nerd Font`.
+
 ## fzf
 
 fzf provides a more interactive reverse search in the terminal. See [this explanation of fzf](https://remysharp.com/2018/08/23/cli-improved#fzf--ctrlr).
