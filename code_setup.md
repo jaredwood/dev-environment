@@ -250,9 +250,9 @@ Some git commands are long. Create aliases for them. Run `git config --global --
   up = "!git fetch --all --prune && git rebase origin/master"
 
   # Pretty log
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  ls = log --pretty=format:"%C(yellow)%h%C(auto)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll = log --pretty=format:"%C(yellow)%h%C(auto)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ld = log --pretty=format:"%C(yellow)%h\\ %ad%C(auto)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
   le = log --oneline --decorate
 ```
 
