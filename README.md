@@ -18,3 +18,8 @@ Refer to the [Productivity Setup](productivity_setup.md) page for details on set
 * Browser search engines setup
 * Gmail setup
 * Slack setup
+
+# Coding Tools References
+
+References and guides for using some coding tools.
+* [Using Git](tools_git.md)
